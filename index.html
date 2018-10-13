@@ -4,9 +4,11 @@
 <title>animalshelter</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="mainpage1.css">
+<link rel="stylesheet" type="text/css" href="mainpage2.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
 .sign-in-form input[type="text"],
 .sign-in-form input[type="password"]{
@@ -24,7 +26,21 @@
     -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
     -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
-
+.sign-in-form input[type="submit"]{
+    background: #009688;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #009688;
+    font-size: 15px;
+}
 </style>
 </head>
 <body id="myPage">
@@ -36,8 +52,15 @@
   <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
   <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
   <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-  <a href="#animals" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Find a pet</a>
+  <a class="w3-bar-item w3-button w3-hide-small w3-hover-white">Find a pet</a>
    <a href="#sign-in-form" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign in</a>
+   <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button" title="Notifications">Language <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="#" class="w3-bar-item w3-button">English</a>
+      <a href="#" class="w3-bar-item w3-button">Romanian</a>
+    </div>
+  </div>
   </div>
 </div>
 
@@ -144,18 +167,12 @@
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-hover-shadow">
         <li class="w3-theme-l2">
-          <p class="w3-xlarge">Pro</p>
+          <p class="w3-xlarge">Name 1</p>
         </li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
-          <span class="w3-opacity">per month</span>
+        <li><img src="images/dog.jpg" style="width:450px"></li>
         </li>
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <button class="w3-button w3-teal w3-padding-large"> Adopt</button>
         </li>
       </ul>
     </div>
@@ -163,37 +180,23 @@
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-hover-shadow">
         <li class="w3-theme-l2">
-          <p class="w3-xlarge">Pro</p>
+          <p class="w3-xlarge">Name 2</p>
         </li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
+        <li><img src="images/dog.jpg" style="width:450px"></li>
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <button class="w3-button w3-teal w3-padding-large">Adopt</button>
         </li>
       </ul>
     </div>
 
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme">
-          <p class="w3-xlarge">Premium</p>
+        <li class="w3-theme-12">
+          <p class="w3-xlarge">Name 3</p>
         </li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
+        <li><img src="images/dog.jpg" style="width:450px"></li>
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <button class="w3-button w3-teal w3-padding-large"> Adopt</button>
         </li>
       </ul>
     </div>
@@ -217,10 +220,10 @@
 <form method="post" action="">
 	<input type="text" name="username" placeholder="Username"><br>
     <input type="password" name="password" placeholder="Password"><br>
-	<input type="submit" name="sign-in-button" value="Sign in"><br>
+	<input type="submit" name="sign-in-button" style="margin-right:350px" value="Sign in"><br>
 </form>
-<p>You don't have an account?</p>
-<a href="./signup.php">Sign Up</a>
+<p style="margin-right:350px">You don't have an account?</p>
+<a href="./signup.php" style="margin-right:350px">Sign Up</a>
 </div>
 </div>
 
