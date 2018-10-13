@@ -42,13 +42,6 @@ echo "Connected successfully";
 if(isset($_POST['submit']))
 {
 echo "Submit pressed!";
-$ok=true;
-if(!isset($_POST['firstname'])|| !isset($_POST['lastname']) ||!isset($_POST['town']) || !isset($_POST['email']) ||!isset($_POST['username']) ||!isset($_POST['password']) ||!isset($_POST['password2'])){
-$ok=false;
-}
-echo $ok;
-if($ok)
-{
 $fn=test_input($_POST['firstname']);
 $ln=test_input($_POST['lastname']);
 $tw=test_input($_POST['town']);
@@ -57,21 +50,27 @@ $u=test_input($_POST['username']);
 $pw=test_input($_POST['password']);
 $pw2=test_input($_POST['password2']);
 $iUniqueNumber = crc32(uniqid());
-//$check="SELECT COUNT(*) FROM user WHERE username = $u";
-//echo "am ajuns aici";
 
-//if (mysqli_query($conn,$check)===0 && same_password() )
-//{
+
+if (same_password())
+{
 $sql="INSERT INTO user(id,firstname,lastname,town,email,username,password) VALUES ('$iUniqueNumber','$fn','$ln','$tw','$m','$u','$pw')";
 if(mysqli_query($conn,$sql)===TRUE){
 	echo "New record created successfully";
-}else {
-	echo "Error: ". $sql . "<br>" . $conn->error;
+	header('Location:index.html');
+}else if($conn->errno==1062){
+	$message = "Username already taken";
+    echo "<script type='text/javascript'>alert('$message');</script>";
 }
-header('Location:signup.php');
-//}
+	else echo "Error: ". $sql . "<br>" . $conn->error;
+
+}
+else {
+	$message = "You must introduce the same password!";
+    echo "<script type='text/javascript'>alert('$message');</script>";
 }
 }
+
 $conn->close();
 
 function test_input($data) {

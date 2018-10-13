@@ -1,0 +1,101 @@
+.add-pet-form{
+    width:60%;
+    padding: 10px 20px;
+	background:#E6E6FA;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.add-pet-form fieldset{
+    border: none;
+}
+.add-pet-form legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.add-pet-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+.add-pet-form input[type="text"],
+.add-pet-form select ,
+.add-pet-form textarea {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background:#FFFFF0/* rgba(255,255,255,.1);*/
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: ##FFFFF0;
+    color:#4B0082;
+    -webkit-box-shadow: 0 1px 0 #FFFFF0/*rgba(0,0,0,0.03)*/ inset;
+    box-shadow: 0 1px 0 #FFFFF0 inset;
+    margin-bottom: 30px;
+    
+}
+.add-pet-form input[type="text"]:focus,
+.add-pet-form select:focus{
+    background: #FFFFF0;
+}
+.add-pet-form select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.add-pet-form .number {
+    background: #483D8B;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.add-pet-form input[type="submit"],
+.add-pet-form input[type="button"],
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin:0 auto;
+    background: #483D8B;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #483D8B;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.add-pet-form input[type="submit"]:hover,
+.add-pet-form input[type="button"]:hover
+{
+    background: #00008B;
+}
+.add-pet-form-text{
+	font-size:20px;
+	text-shadow: 2px 1px ivory;
+}
+.custom-file-upload{
+	 border: 1px solid black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+	font-size:20px;
+	text-shadow: 2px 1px ivory;
+}
+.add-pet-form input[type="file"] {
+    display: none;
+}
