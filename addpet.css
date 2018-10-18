@@ -22,8 +22,7 @@
 .add-pet-form select ,
 .add-pet-form textarea {
     font-family: Georgia, "Times New Roman", Times, serif;
-    background:#FFFFF0/* rgba(255,255,255,.1);*/
-    border: none;
+    background:#FFFFF0;
     border-radius: 4px;
     font-size: 16px;
     margin: 0;
@@ -33,12 +32,12 @@
     box-sizing: border-box; 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box; 
-    background-color: ##FFFFF0;
+    background-color: #FFFFFF;
     color:#4B0082;
     -webkit-box-shadow: 0 1px 0 #FFFFF0/*rgba(0,0,0,0.03)*/ inset;
     box-shadow: 0 1px 0 #FFFFF0 inset;
     margin-bottom: 30px;
-    
+
 }
 .add-pet-form input[type="text"]:focus,
 .add-pet-form select:focus{
@@ -61,21 +60,20 @@
     text-shadow: 0 1px 0 rgba(255,255,255,0.2);
     border-radius: 15px 15px 15px 0px;
 }
-
 .add-pet-form input[type="submit"],
-.add-pet-form input[type="button"],
+.add-pet-form input[type="button"]
 {
     position: relative;
     display: block;
     padding: 19px 39px 18px 39px;
     color: #FFF;
-    margin:0 auto;
-    background: #483D8B;
+    margin: 0 auto;
+    background:  #483D8B;
     font-size: 18px;
     text-align: center;
     font-style: normal;
     width: 100%;
-    border: 1px solid #483D8B;
+    border: 1px solid #00008B;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
 }
@@ -89,13 +87,17 @@
 	text-shadow: 2px 1px ivory;
 }
 .custom-file-upload{
-	 border: 1px solid black;
+	border: 2px solid #696969;
+    border-radius: 5px;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-	font-size:20px;
-	text-shadow: 2px 1px ivory;
+	font-size:16px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align:left;
+	
 }
 .add-pet-form input[type="file"] {
     display: none;
 }
+

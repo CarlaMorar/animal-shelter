@@ -1,3 +1,7 @@
+<?php
+session_start();
+// echo "Hello, ".$_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +57,7 @@
   <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
   <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
   <a class="w3-bar-item w3-button w3-hide-small w3-hover-white">Find a pet</a>
-   <a href="#sign-in-form" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign in</a>
+  <a href="./addpet.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Add a pet</a>
    <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button" title="Notifications">Language <i class="fa fa-caret-down"></i></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -61,6 +65,8 @@
       <a href="#" class="w3-bar-item w3-button">Romanian</a>
     </div>
   </div>
+  <p style="margin:8px auto auto 85%">Hello, <?php echo $_SESSION['username'];?></p>
+  <a href="logout.php" style="margin:8px auto auto 95%" >Logout</a>
   </div>
 </div>
 
@@ -203,7 +209,7 @@
 </div>
 
 <!-- Contact Container -->
-<div style="text-align:center">
+<div style="text-align:center;margin-left:30%">
 <div id="contact" style="float:left;width:50%;margin-left:200px">
   <div class="w3-row">
     <div class="w3-col m5">
@@ -216,17 +222,9 @@
     </div>
   </div>
 </div>
-<div class="sign-in-form" id="sign-in-form">
-<form method="post" action="">
-	<input type="text" name="username" placeholder="Username"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-	<input type="submit" name="sign-in-button" style="margin-right:350px" value="Sign in"><br>
-</form>
-<p style="margin-right:350px">You don't have an account?</p>
-<a href="./signup.php" style="margin-right:350px">Sign Up</a>
-</div>
 </div>
 
 
 </body>
 </html>
+

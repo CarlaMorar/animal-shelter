@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>SignUp</title>
-    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 <body>
 
-    <div class="sign-up-form">
+    <div class="register-form">
     <h1>Sign Up Now!</h1>
-    <form method="post" action="signup.php">
+    <form method="post" action="register.php">
        <p>Picture(optional):
        <input type="file" name="pic"></p>
        <input type="text" name="firstname" placeholder="First name*" required><br>
@@ -42,22 +42,23 @@ echo "Connected successfully";
 if(isset($_POST['submit']))
 {
 echo "Submit pressed!";
-$fn=test_input($_POST['firstname']);
-$ln=test_input($_POST['lastname']);
-$tw=test_input($_POST['town']);
-$m=test_input($_POST['email']);
-$u=test_input($_POST['username']);
-$pw=test_input($_POST['password']);
-$pw2=test_input($_POST['password2']);
-$iUniqueNumber = crc32(uniqid());
+$pic=$_POST['pic'];
+$fn=mysqli_real_escape_string($conn,$_POST['firstname']);
+$ln=mysqli_real_escape_string($conn,$_POST['lastname']);
+$tw=mysqli_real_escape_string($conn,$_POST['town']);
+$m=mysqli_real_escape_string($conn,$_POST['email']);
+$u=mysqli_real_escape_string($conn,$_POST['username']);
+$pw=mysqli_real_escape_string($conn,$_POST['password']);
+$pw2=mysqli_real_escape_string($conn,$_POST['password2']);
 
 
 if (same_password())
 {
-$sql="INSERT INTO user(id,firstname,lastname,town,email,username,password) VALUES ('$iUniqueNumber','$fn','$ln','$tw','$m','$u','$pw')";
+$hash=password_hash($pw,PASSWORD_BCRYPT);
+$sql="INSERT INTO user(pic,firstname,lastname,town,email,username,password) VALUES ('$pic','$fn','$ln','$tw','$m','$u','$hash')";
 if(mysqli_query($conn,$sql)===TRUE){
 	echo "New record created successfully";
-	header('Location:index.html');
+	header('Location:index.php');
 }else if($conn->errno==1062){
 	$message = "Username already taken";
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -73,12 +74,6 @@ else {
 
 $conn->close();
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 function same_password(){
 	return $_POST['password']==$_POST['password2'];
 }

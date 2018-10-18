@@ -1,18 +1,20 @@
-.sign-up-form{
+.register-form{
     font: bold arial;
     width:450px;
     padding:30px;
-    margin:40px auto;
-    background: #FFF;
+    margin:2% auto auto 2%;
+    background: #FAF0E6;
     border-radius: 10px;
+    -webkit-border-radius:10px;
     -webkit-border-radius:10px;
     -moz-border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
     -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
-.sign-up-form h1{
-    background: #009688;
+
+.register-form h1{
+    background:#FFA07A;
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
     border-radius: 10px 10px 0 0;
@@ -24,13 +26,13 @@
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
+    border: 1px solid #FFE4B5;
 }
-.sign-up-form input[type="text"],
-.sign-up-form input[type="date"],
-.sign-up-form input[type="email"],
-.sign-up-form input[type="password"],
-.sign-up-form input[type="file"]
+.register-form input[type="text"],
+.register-form input[type="date"],
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="file"]
  {
     display: block;
     box-sizing: border-box;
@@ -46,9 +48,13 @@
     -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
     -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
-
-.sign-up-form input[type="submit"]{
-    background: #009688;
+body{
+	background-image:url(./images/background.jpg);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+.register-form input[type="submit"]{
+    background: #FFA07A;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -59,7 +65,6 @@
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #009688;
+    border: 1px solid #FFE4B5;
     font-size: 15px;
-	width:100%;
 }
