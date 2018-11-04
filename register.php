@@ -8,9 +8,9 @@
 
     <div class="register-form">
     <h1>Sign Up Now!</h1>
-    <form method="post" action="register.php">
+    <form method="post" action="register.php" enctype="multipart/form-data">
        <p>Picture(optional):
-       <input type="file" name="pic"></p>
+       <input type="file" name="image" accept="image/gif, image/jpeg, image/png"></p>
        <input type="text" name="firstname" placeholder="First name*" required><br>
        <input type="text" name="lastname" placeholder="Last name*" required><br>
        <input type="text" name="town" placeholder="Town*" required><br>
@@ -37,12 +37,22 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
+//echo "Connected successfully";
 
 if(isset($_POST['submit']))
 {
-echo "Submit pressed!";
-$pic=$_POST['pic'];
+if(!($_FILES['image']['tmp_name']))
+{
+	$message = "Please select a picture";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+else{
+$image=addslashes($_FILES['image']['tmp_name']);
+$name=addslashes($_FILES['image']['name']);
+$image=file_get_contents($image);
+$image=base64_encode($image);
+	
+
 $fn=mysqli_real_escape_string($conn,$_POST['firstname']);
 $ln=mysqli_real_escape_string($conn,$_POST['lastname']);
 $tw=mysqli_real_escape_string($conn,$_POST['town']);
@@ -55,7 +65,7 @@ $pw2=mysqli_real_escape_string($conn,$_POST['password2']);
 if (same_password())
 {
 $hash=password_hash($pw,PASSWORD_BCRYPT);
-$sql="INSERT INTO user(pic,firstname,lastname,town,email,username,password) VALUES ('$pic','$fn','$ln','$tw','$m','$u','$hash')";
+$sql="INSERT INTO user(pic,picname,firstname,lastname,town,email,username,password) VALUES ('$image','$name','$fn','$ln','$tw','$m','$u','$hash')";
 if(mysqli_query($conn,$sql)===TRUE){
 	echo "New record created successfully";
 	header('Location:index.php');
@@ -69,6 +79,7 @@ if(mysqli_query($conn,$sql)===TRUE){
 else {
 	$message = "You must introduce the same password!";
     echo "<script type='text/javascript'>alert('$message');</script>";
+}
 }
 }
 

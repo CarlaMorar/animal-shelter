@@ -13,7 +13,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
+//echo "Connected successfully";
 
 if(isset($_POST['sign-in-button'])){
     $sql=sprintf("SELECT * from user WHERE username='%s'",
@@ -25,24 +25,25 @@ if(isset($_POST['sign-in-button'])){
 		$isAdmin=$row['isAdmin'];
 		$p=$_POST['password'];
 		$firstname=$row['firstname'];
+		$pic=$row['pic'];
 
 		if(password_verify($p,$hash)){
-            
+            $_SESSION['username'] = $firstname;
+			$_SESSION['isAdmin']=$isAdmin;
+			$_SESSION['pic']=$pic;
 			if($isAdmin==0){
-				$_SESSION['username'] = $firstname;
 				header("Location:mainpage.php");
 			}
 			else {
-			
-				header("Location:mainpageadmin.php");
+				header("Location:adminpage.php");
 			}
 		}
 		else{
-			echo 'Login failed1';
+			echo 'Incorrect password';
 		}
 	}else
 	{
-		echo 'Login failed2';
+		echo 'Incorrect username';
 	}
 	$conn->close();
 }
